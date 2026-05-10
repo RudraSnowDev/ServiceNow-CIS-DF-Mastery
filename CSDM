@@ -1,1 +1,573 @@
+# CSDM Complete Guide
 
+
+# Introduction
+
+CSDM stands for Common Service Data Model.
+
+It is a ServiceNow framework that provides a standardized way to connect business services, technical services, applications, and infrastructure inside CMDB.
+
+In simple words:
+
+**CSDM helps Business and IT speak the same language.**
+
+Without CSDM:
+
+* CMDB becomes messy
+* Incident impact analysis becomes difficult
+* Change management becomes risky
+* Ownership becomes unclear
+* Reporting becomes unreliable
+
+With CSDM:
+
+* Better visibility
+* Faster incident resolution
+* Accurate impact analysis
+* Strong governance
+* Better automation
+* Audit readiness
+
+---
+
+# Real-Life Example
+
+Let us take a real company example:
+
+## Rudra Bank Pvt Ltd
+
+This bank provides:
+
+* Internet Banking
+* Loan Processing
+* UPI Payments
+* Credit Card Services
+* Insurance Services
+
+Now imagine:
+
+Customer says:
+
+“Internet Banking is down”
+
+Management asks:
+
+* Which application failed?
+* Which server is impacted?
+* Which database is causing issue?
+* Which team should fix it?
+* What is the business impact?
+
+Without CSDM:
+
+Everyone starts guessing.
+
+With CSDM:
+
+Everything is mapped.
+
+This is where CSDM becomes powerful.
+
+---
+
+# Why CSDM Matters
+
+CSDM creates a proper connection between:
+
+Business → Services → Applications → Infrastructure → Support Teams
+
+This helps organizations:
+
+* understand service impact
+* reduce downtime
+* improve service delivery
+* support audit and compliance
+* improve decision-making
+
+---
+
+# CSDM 5.0 Layers
+
+CSDM 5.0 is divided into major layers:
+
+1. Foundation
+2. Design
+3. Manage Technical Services
+4. Sell / Consume
+5. Govern
+
+We will understand each one.
+
+---
+
+# 1. Foundation Layer
+
+This is the base layer.
+
+Think of it as company identity and ownership.
+
+Includes:
+
+* Company
+* Department
+* Users
+* Groups
+* Locations
+* Vendors
+* Cost Centers
+
+## Example
+
+Organization: Rudra Bank Pvt Ltd
+
+Departments:
+
+* DBA Team
+* Network Team
+* Security Team
+* ServiceNow Team
+
+Users:
+
+* Rahul (DBA)
+* Priya (Application Owner)
+
+Groups:
+
+* Oracle DBA Group
+* Linux Support Group
+
+Without this layer, ownership becomes unclear.
+
+---
+
+# 2. Design Layer
+
+This layer answers:
+
+## What does the business do?
+
+and
+
+## Which applications support that work?
+
+---
+
+# Business Capability
+
+Business capability means:
+
+## What the business does
+
+Examples:
+
+* Loan Processing
+* Fraud Detection
+* Account Opening
+* Payment Processing
+
+This is business function.
+
+Not server.
+
+Not application.
+
+Only business capability.
+
+---
+
+# Business Application
+
+This answers:
+
+## Which application supports that capability?
+
+Example:
+
+Capability: Loan Processing
+
+Business Application: LoanPro App
+
+Capability: Online Payments
+
+Business Application: PayFast App
+
+Business Application is logical.
+
+It defines WHAT application exists.
+
+---
+
+# Application Service
+
+This answers:
+
+## What does the user actually access?
+
+Example:
+
+* Internet Banking Portal
+* Mobile Banking Service
+* Credit Card Portal
+
+Application Service is user-facing.
+
+This is what customers or employees use.
+
+---
+
+# Technical Service
+
+This answers:
+
+## What backend services support the application?
+
+Examples:
+
+* Oracle Database Service
+* Authentication Service
+* API Gateway
+* Load Balancer Service
+
+Technical services are backend support services.
+
+Users do not directly see them.
+
+---
+
+# Important Difference
+
+## Business Application vs Application Service
+
+Business Application = WHAT
+
+Application Service = HOW USERS ACCESS IT
+
+Example:
+
+Business Application = Internet Banking App
+
+Application Service = Internet Banking Production Portal
+
+---
+
+# Application Service vs Technical Service
+
+Application Service = customer-facing
+
+Technical Service = backend-facing
+
+Example:
+
+Application Service = Net Banking Portal
+
+Technical Service = Oracle DB Service
+
+---
+
+# 3. Manage Technical Services Layer
+
+This is where actual infrastructure exists.
+
+This includes:
+
+* Servers
+* Databases
+* Firewalls
+* Load Balancers
+* Virtual Machines
+* Cloud Instances
+* Storage
+* Network Devices
+
+These are called:
+
+# Configuration Items (CI)
+
+---
+
+# CI (Configuration Item)
+
+A CI is any component that needs to be managed to deliver IT services.
+
+Examples:
+
+* Linux Server
+* Oracle Database
+* AWS RDS
+* Firewall
+* Application Server
+
+These are stored inside CMDB.
+
+---
+
+# Relationships (Most Important)
+
+CSDM becomes powerful because of relationships.
+
+Example:
+
+Internet Banking Portal
+
+runs on
+
+Application Server
+
+depends on
+
+Oracle Database
+
+depends on
+
+Storage
+
+depends on
+
+Network
+
+This relationship helps during incidents.
+
+---
+
+# Incident Example
+
+Production database goes down.
+
+Question:
+
+What is impacted?
+
+Because of relationships, ServiceNow can show:
+
+* Net Banking impacted
+* UPI impacted
+* Loan Processing stopped
+
+Without relationships:
+
+Only guesswork.
+
+With relationships:
+
+Exact impact analysis.
+
+---
+
+# 4. Sell / Consume Layer
+
+This layer is about how users consume services.
+
+---
+
+# Service Offering
+
+A Service Offering is a specific version of a service.
+
+Example:
+
+Service = Email Service
+
+Offerings:
+
+* Standard Email
+* Premium Email
+* Executive Email
+
+Same service
+
+Different offerings
+
+---
+
+# Service Portfolio
+
+This is the full list of services provided by the company.
+
+Examples:
+
+* VPN Access
+* Laptop Request
+* Email Service
+* Database Provisioning
+* Application Access
+
+This is the service inventory.
+
+---
+
+# Catalog Item
+
+This is what users request.
+
+Examples:
+
+* Request New Laptop
+* Create Database User
+* Increase Storage
+* Request VPN Access
+
+Simple understanding:
+
+Service = Restaurant
+
+Offering = Veg Thali / Premium Thali
+
+Catalog Item = Order Now
+
+---
+
+# 5. Govern Layer
+
+This ensures control, compliance, and risk management.
+
+Includes:
+
+* Policies
+* Compliance
+* Risk
+* Audit
+* Ownership Validation
+
+---
+
+# Example
+
+Policy:
+
+“All production databases must have daily backup”
+
+Risk:
+
+“If backup fails → Data loss”
+
+Compliance:
+
+RBI compliance
+
+ISO compliance
+
+Audit:
+
+Backup verification reports
+
+This makes enterprise operations safe.
+
+---
+
+# Real BFSI Scenario
+
+Suppose:
+
+Rudra Bank’s UPI payment service fails.
+
+Because of CSDM:
+
+ServiceNow can identify:
+
+* impacted application
+* dependent database
+* related server
+* owning support group
+* business owner
+* revenue impact
+
+This helps management make fast decisions.
+
+This is why enterprises depend on CSDM.
+
+---
+
+# Pros of CSDM
+
+## 1. Better Incident Resolution
+
+Faster root cause analysis
+
+---
+
+## 2. Accurate Change Impact
+
+Safer deployments and change approvals
+
+---
+
+## 3. Strong CMDB Governance
+
+Cleaner and reliable CMDB
+
+---
+
+## 4. Audit Ready
+
+Compliance becomes easier
+
+---
+
+## 5. Better Reporting
+
+Management gets proper visibility
+
+---
+
+## 6. Better Automation
+
+Flows and workflows become smarter
+
+---
+
+# Cons of CSDM
+
+## 1. Initial Setup is Heavy
+
+Requires planning and structure
+
+---
+
+## 2. Cross-Team Alignment is Difficult
+
+Multiple teams must work together
+
+---
+
+## 3. Legacy CMDB Cleanup is Painful
+
+Old organizations struggle here
+
+---
+
+## 4. Ownership Confusion
+
+Who owns what becomes a challenge
+
+---
+
+## 5. Wrong Relationships Create Problems
+
+Bad mapping = wrong impact analysis
+
+---
+
+# Final Memory Line
+
+## CSDM = Business connected to IT through CMDB
+
+or
+
+## CSDM = Business ko IT se shaadi karwana
+
+and
+
+## CMDB is the marriage certificate
+
+This line helps remember forever.
+
+---
+
+# Final Thought
+
+CSDM is not just about tables.
+
+It is about visibility, ownership, decision-making, and business continuity.
+
+If you understand CSDM deeply, you move from being a normal ServiceNow developer to someone who thinks like an Enterprise Architect.
